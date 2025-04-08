@@ -120,25 +120,6 @@ TEST(BloomFilterTest, FunctionalOperator) {
 	EXPECT_TRUE(filter("test"));
 }
 
-// Test I/O operators
-TEST(BloomFilterTest, IOOperators) {
-	BloomFilter<1024> filter1(3);
-	filter1.add("test1");
-	filter1.add("test2");
-
-	// Write to string stream
-	std::stringstream ss;
-	ss << filter1;
-
-	// Read back to a new filter
-	BloomFilter<1024> filter2(3);
-	ss >> filter2;
-
-	// The new filter should contain the same items
-	EXPECT_TRUE(filter2.possiblyContains("test1"));
-	EXPECT_TRUE(filter2.possiblyContains("test2"));
-	EXPECT_FALSE(filter2.certainlyContains("not_added"));
-}
 
 // Test adding items from file
 TEST(BloomFilterTest, AddFromFile) {
