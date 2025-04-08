@@ -48,10 +48,6 @@ public:
     // Operator to check direct access, same as possiblyContains
     bool operator()(const std::string& item) const;
 
-    // I/O operators for reading and writing Bloom filter states
-    friend std::ostream& operator<<(std::ostream& os, const BloomFilter& bloom_filter); // Output stream operator
-    friend std::istream& operator>>(std::istream& is, BloomFilter& bloom_filter); // Input stream operator
-
 private:
     // Bit array to represent elements presence probabilistically
     std::bitset<N> bits;
