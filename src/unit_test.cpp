@@ -379,7 +379,7 @@ TEST(TrieTest, DFSTraversal) {
 
 	// Check if all characters are visited
 	// Order will be different from BFS
-	EXPECT_EQ(visited.size(), 6);  // a,p,p,l,e (from "apple", might include
+	EXPECT_EQ(visited.size(), 5);  // a,p,p,l,e (from "apple", might include
 								   // "app" chars in different order)
 
 	// Check if all expected characters are in the result
